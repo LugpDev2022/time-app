@@ -1,3 +1,9 @@
+import { Row } from 'react-bootstrap';
+
 export const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <Row>
+      <h1 className='text-primary'>Time App</h1>
+    </Row>
+  );
 };
