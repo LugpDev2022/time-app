@@ -6,7 +6,7 @@ export const AppNavbar = () => (
   <Navbar expand='md' bg='dark' variant='dark'>
     <Container>
       <Navbar.Brand>
-        <Link to='/' className='text-decoration-none text-primary fs-4'>
+        <Link to='/' className='text-decoration-none text-primary fs-4 fw-bold'>
           Time App
         </Link>
       </Navbar.Brand>
