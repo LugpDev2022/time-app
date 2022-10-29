@@ -5,16 +5,16 @@ export const ClockPage = () => {
   const { hours, minutes } = useLocalClock();
 
   return (
-    <div className='position-absolute top-50 start-50 translate-middle'>
+    <div className='position-absolute top-50 start-50 translate-middle border rounded-4 border-2 border-primary w-50 p-4'>
       <Container>
         <Row>
           <Col>
-            <h1 className='text-primary text-center mt-4'>Local Clock</h1>
+            <h1 className='text-primary text-center mb-4'>Local Clock</h1>
           </Col>
         </Row>
 
-        <Row className='mt-5'>
-          <div className='border rounded-4 border-2 border-primary d-flex align-items-center justify-content-center p-5'>
+        <Row>
+          <div className='d-flex align-items-center justify-content-center'>
             <span className='text-primary h1'>{`${hours}:${minutes}`}</span>
           </div>
         </Row>
