@@ -20,24 +20,26 @@ export const useLocalClock = () => {
     setInterval(() => {
       const date = new Date();
       const newMinutes = date.getMinutes().toString();
-      const newHour = date.getHours().toString();
+      const newHours = date.getHours().toString();
 
-      if (minutes !== newMinutes) {
-        if (newMinutes.length < 2) {
-          setTime({ hours, minutes: `0${newMinutes}` });
+      if (minutes !== newMinutes && newMinutes.length < 2) {
+        if (newHours.length < 2) {
+          setTime({ hours: `0${newHours}`, minutes: `0${newMinutes}` });
           return;
         }
 
-        setTime({ hours, minutes: newMinutes });
+        setTime({ hours: newHours, minutes: `0${newMinutes}` });
+        return;
       }
 
-      if (hours !== newHour) {
-        if (newHour.length < 2) {
-          setTime({ minutes, hours: `0${newHour}` });
+      if (minutes !== newMinutes) {
+        if (newHours.length < 2) {
+          setTime({ hours: `0${newHours}`, minutes: `0${newMinutes}` });
           return;
         }
 
-        setTime({ minutes, hours: newHour });
+        setTime({ hours: newHours, minutes: newMinutes });
+        return;
       }
     }, 5000);
   }, []);
