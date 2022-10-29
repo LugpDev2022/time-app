@@ -1,8 +1,14 @@
+import { Container, Row, Col } from 'react-bootstrap';
+
 const App = () => {
   return (
-    <>
-      <h1>Time App</h1>
-    </>
+    <Container>
+      <Row>
+        <Col>
+          <h1 className='text-primary text-center'>Time App</h1>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
