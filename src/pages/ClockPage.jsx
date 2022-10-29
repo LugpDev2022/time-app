@@ -5,7 +5,7 @@ export const ClockPage = () => {
   const { hours, minutes } = useLocalClock();
 
   return (
-    <div className='position-absolute top-50 start-50 translate-middle border rounded-4 border-2 border-primary w-50 p-4'>
+    <div className='position-absolute top-50 start-50 translate-middle border rounded-4 border-2 border-primary w-75 p-4'>
       <Container>
         <Row>
           <Col>
@@ -15,7 +15,7 @@ export const ClockPage = () => {
 
         <Row>
           <div className='d-flex align-items-center justify-content-center'>
-            <span className='text-primary h1'>{`${hours}:${minutes}`}</span>
+            <span className='text-primary h1 fw-bold'>{`${hours}:${minutes}`}</span>
           </div>
         </Row>
       </Container>
