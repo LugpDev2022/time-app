@@ -13,7 +13,7 @@ export const AppNavbar = () => (
       <Navbar.Toggle aria-controls='navbar-nav' />
       <Navbar.Collapse id='navbar-nav'>
         <Nav>
-          <NavbarLink to='/clock'>Clock</NavbarLink>
+          <NavbarLink to='/'>Clock</NavbarLink>
           <NavbarLink to='/world-clock'>World Clock</NavbarLink>
           <NavbarLink to='/timer'>Timer</NavbarLink>
         </Nav>
