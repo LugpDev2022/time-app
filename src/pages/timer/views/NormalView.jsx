@@ -1,10 +1,11 @@
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { BigNumber, Title } from '../../../components';
-import { useCounterTimer } from '../hooks/';
+import { secondsToMinutes } from '../helpers';
 
 export const NormalView = () => {
-  const { counter } = useCounterTimer();
+  const { minutes, seconds } = secondsToMinutes(131);
+  console.log(minutes, seconds);
 
   return (
     <Container>
@@ -13,7 +14,7 @@ export const NormalView = () => {
       </Row>
       <Row>
         <div className='d-flex align-items-center justify-content-center'>
-          <BigNumber>{`${counter.minutes}:${counter.seconds}`}</BigNumber>
+          <BigNumber>00:00</BigNumber>
         </div>
       </Row>
       <Row className='justify-content-center align-items-center'>
