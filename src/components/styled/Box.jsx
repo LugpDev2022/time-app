@@ -9,6 +9,9 @@ export const Box = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (min-width: 400px) {
     width: 80%;
