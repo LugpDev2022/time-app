@@ -1,3 +1,3 @@
 export * from './ClockPage';
 export * from './timer/TimerPage';
-export * from './WorldClockPage';
+export * from './worldClock/WorldClockPage';
