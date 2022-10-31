@@ -4,7 +4,6 @@ import { NewTimerView, NormalView } from './views';
 
 export const TimerPage = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
 
   return (
     <Box>{pathname === '/timer/new' ? <NewTimerView /> : <NormalView />}</Box>

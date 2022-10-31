@@ -1,6 +1,6 @@
 import { Button, ButtonGroup, Col, Container, Row } from 'react-bootstrap';
 import { BigNumber, Title } from '../../../components';
-import { ExitButton } from '../components/ExitButton';
+import { ExitButton } from '../components';
 
 export const NewTimerView = () => {
   return (

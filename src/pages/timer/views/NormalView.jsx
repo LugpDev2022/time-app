@@ -1,8 +1,12 @@
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { BigNumber, Title } from '../../../components';
+import { secondsToMinutes } from '../helpers';
 
 export const NormalView = () => {
+  const { minutes, seconds } = secondsToMinutes(131);
+  console.log(minutes, seconds);
+
   return (
     <Container>
       <Row>
