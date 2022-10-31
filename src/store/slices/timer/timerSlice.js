@@ -4,7 +4,7 @@ export const timerSlice = createSlice({
   name: 'timer',
   initialState: {
     counter: {
-      minutes: '00',
+      minutes: '10',
       seconds: '00',
     },
   },
