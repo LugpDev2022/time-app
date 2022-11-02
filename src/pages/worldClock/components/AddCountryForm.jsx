@@ -1,10 +1,9 @@
 import { Row, Form, InputGroup, Col, Button } from 'react-bootstrap';
+import { useCountryForm } from '../hooks';
 
 export const AddCountryForm = () => {
-  const handleSubmit = e => {
-    console.log('sended');
-    e.preventDefault();
-  };
+  const { countrySelect, handleSubmit, city, handleInputChange } =
+    useCountryForm();
 
   return (
     <Row>
@@ -23,14 +22,15 @@ export const AddCountryForm = () => {
                   aria-label='Region selector'
                   aria-describedby='region-desc'
                   className='bg-dark border-0 text-info'
+                  ref={countrySelect}
                 >
-                  <option value='america'>America</option>
-                  <option value='asia'>Asia</option>
-                  <option value='africa'>Africa</option>
-                  <option value='australia'>Australia</option>
-                  <option value='europe'>Europe</option>
-                  <option value='pacific'>Pacific</option>
-                  <option value='indian'>Indian</option>
+                  <option value='America'>America</option>
+                  <option value='Asia'>Asia</option>
+                  <option value='Africa'>Africa</option>
+                  <option value='Australia'>Australia</option>
+                  <option value='Europe'>Europe</option>
+                  <option value='Pacific'>Pacific</option>
+                  <option value='Indian'>Indian</option>
                 </Form.Select>
               </InputGroup>
             </Col>
@@ -44,9 +44,11 @@ export const AddCountryForm = () => {
                   City
                 </InputGroup.Text>
                 <Form.Control
-                  placeholder='Toronto'
                   aria-label='country'
                   className='bg-dark border-0 text-info'
+                  onChange={handleInputChange}
+                  placeholder='Toronto'
+                  value={city}
                 />
               </InputGroup>
             </Col>
