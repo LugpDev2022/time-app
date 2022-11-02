@@ -22,7 +22,7 @@ export const AddCountryForm = () => {
                 <Form.Select
                   aria-label='Region selector'
                   aria-describedby='region-desc'
-                  className='bg-dark border-0 text-primary'
+                  className='bg-dark border-0 text-info'
                 >
                   <option value='america'>America</option>
                   <option value='asia'>Asia</option>
@@ -46,7 +46,7 @@ export const AddCountryForm = () => {
                 <Form.Control
                   placeholder='Toronto'
                   aria-label='country'
-                  className='bg-dark border-0 text-primary'
+                  className='bg-dark border-0 text-info'
                 />
               </InputGroup>
             </Col>
