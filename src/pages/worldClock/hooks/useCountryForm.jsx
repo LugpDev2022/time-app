@@ -1,18 +1,26 @@
 import { useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addClock } from '../../../store/slices/worldClock';
 
 export const useCountryForm = () => {
   const [city, setCity] = useState('');
-  const countrySelect = useRef();
+  const regionSelect = useRef();
+  const dispatch = useDispatch();
 
   const handleInputChange = ({ target }) => {
     setCity(target.value);
   };
+
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(countrySelect.current.value);
-    console.log(city);
+    const action = {
+      region: regionSelect.current.value,
+      city,
+    };
+    dispatch(addClock(action));
+
     setCity('');
   };
 
-  return { countrySelect, handleSubmit, city, handleInputChange };
+  return { regionSelect, handleSubmit, city, handleInputChange };
 };

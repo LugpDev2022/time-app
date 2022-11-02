@@ -2,7 +2,7 @@ import { Row, Form, InputGroup, Col, Button } from 'react-bootstrap';
 import { useCountryForm } from '../hooks';
 
 export const AddCountryForm = () => {
-  const { countrySelect, handleSubmit, city, handleInputChange } =
+  const { regionSelect, handleSubmit, city, handleInputChange } =
     useCountryForm();
 
   return (
@@ -22,7 +22,7 @@ export const AddCountryForm = () => {
                   aria-label='Region selector'
                   aria-describedby='region-desc'
                   className='bg-dark border-0 text-info fs-4'
-                  ref={countrySelect}
+                  ref={regionSelect}
                 >
                   <option value='America'>America</option>
                   <option value='Asia'>Asia</option>
