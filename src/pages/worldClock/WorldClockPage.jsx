@@ -1,6 +1,6 @@
 import { Container, Row } from 'react-bootstrap';
 import { Title } from '../../components';
-import { AddCountryForm } from './components/AddCountryForm';
+import { AddCountryForm, CountryClockList } from './components';
 
 export const WorldClockPage = () => {
   return (
@@ -10,6 +10,7 @@ export const WorldClockPage = () => {
       </Row>
 
       <AddCountryForm />
+      <CountryClockList />
     </Container>
   );
 };
