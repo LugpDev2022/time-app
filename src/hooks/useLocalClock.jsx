@@ -6,14 +6,6 @@ export const useLocalClock = () => {
     minutes: new Date().getMinutes().toString(),
   });
 
-  if (hours.length < 2) {
-    setTime({ minutes, hours: '0' + hours });
-  }
-
-  if (minutes.length < 2) {
-    setTime({ minutes: '0' + minutes, hours });
-  }
-
   useEffect(() => {
     setInterval(() => {
       const date = new Date();
@@ -25,6 +17,14 @@ export const useLocalClock = () => {
       }
     }, 5000);
   }, []);
+
+  if (hours.length < 2) {
+    setTime({ minutes, hours: '0' + hours });
+  }
+
+  if (minutes.length < 2) {
+    setTime({ minutes: '0' + minutes, hours });
+  }
 
   return { hours, minutes };
 };

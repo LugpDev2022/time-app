@@ -39,9 +39,9 @@ export const AddCountryForm = () => {
               <InputGroup className='mb-3'>
                 <InputGroup.Text
                   id='region-desc'
-                  className='bg-dark border-0 text-primary'
+                  className='bg-dark border-0 text-primary px-4'
                 >
-                  Country
+                  City
                 </InputGroup.Text>
                 <Form.Control
                   placeholder='Toronto'
@@ -56,7 +56,7 @@ export const AddCountryForm = () => {
                 type='submit'
                 className='text-primary w-100'
               >
-                Add City
+                Add Clock
               </Button>
             </Col>
           </Col>
