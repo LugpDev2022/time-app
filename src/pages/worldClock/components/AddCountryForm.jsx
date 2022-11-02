@@ -14,14 +14,14 @@ export const AddCountryForm = () => {
               <InputGroup className='mb-3'>
                 <InputGroup.Text
                   id='region-desc'
-                  className='bg-dark border-0 text-primary'
+                  className='bg-dark border-0 text-primary fs-4'
                 >
                   Region
                 </InputGroup.Text>
                 <Form.Select
                   aria-label='Region selector'
                   aria-describedby='region-desc'
-                  className='bg-dark border-0 text-info'
+                  className='bg-dark border-0 text-info fs-4'
                   ref={countrySelect}
                 >
                   <option value='America'>America</option>
@@ -39,13 +39,13 @@ export const AddCountryForm = () => {
               <InputGroup className='mb-3'>
                 <InputGroup.Text
                   id='region-desc'
-                  className='bg-dark border-0 text-primary px-4'
+                  className='bg-dark border-0 text-primary px-4 fs-4'
                 >
                   City
                 </InputGroup.Text>
                 <Form.Control
                   aria-label='country'
-                  className='bg-dark border-0 text-info'
+                  className='bg-dark border-0 text-info fs-4'
                   onChange={handleInputChange}
                   placeholder='Toronto'
                   value={city}
@@ -56,7 +56,7 @@ export const AddCountryForm = () => {
               <Button
                 variant='dark'
                 type='submit'
-                className='text-primary w-100'
+                className='text-primary w-100 fs-4'
               >
                 Add Clock
               </Button>

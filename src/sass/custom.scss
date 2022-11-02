@@ -6,4 +6,8 @@ $theme-colors: (
   'info': #40f2fe,
 );
 
+$font-sizes: (
+  1: 2.5em,
+);
+
 @import 'bootstrap/scss/bootstrap';
