@@ -3,9 +3,8 @@ import { CountryClockItem } from './';
 
 export const CountryClockList = () => {
   return (
-    <Row className='justify-content-center my-5'>
+    <Row className='justify-content-center mb-3'>
       <Col md={10} lg={7}>
-        <h2 className='text-center text-primary mb-3'>Your Clocks</h2>
         <ListGroup>
           <CountryClockItem city='Quebec' clock='05:07' date='2022/11/02' />
           <CountryClockItem city='Toronto' clock='11:40' date='2022/11/02' />

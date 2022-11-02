@@ -11,7 +11,7 @@ export const AddCountryForm = () => {
         <Row className='justify-content-center'>
           <Col md={10} lg={7}>
             <Col xs={12}>
-              <InputGroup className='mb-3'>
+              <InputGroup className='mb-2'>
                 <InputGroup.Text
                   id='region-desc'
                   className='bg-dark border-0 text-primary fs-4'
@@ -36,7 +36,7 @@ export const AddCountryForm = () => {
             </Col>
 
             <Col xs={12}>
-              <InputGroup className='mb-3'>
+              <InputGroup className='mb-2'>
                 <InputGroup.Text
                   id='region-desc'
                   className='bg-dark border-0 text-primary px-4 fs-4'
