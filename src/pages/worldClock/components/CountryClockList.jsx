@@ -1,6 +1,6 @@
 import { Row, Col, ListGroup } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { DuplicatedClockAlert } from '../ui';
+import { DuplicatedClockAlert, NotCityAlert } from '../ui';
 import { CountryClockItem } from './';
 
 export const CountryClockList = () => {
@@ -20,6 +20,8 @@ export const CountryClockList = () => {
         ) : (
           <></>
         )}
+
+        {error.isError && error.type === 'Not city' ? <NotCityAlert /> : <></>}
       </Col>
     </Row>
   );

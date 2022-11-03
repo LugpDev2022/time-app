@@ -14,21 +14,28 @@ export const useCountryForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (true) {
-      const action = {
-        errorType: 'Duplicated Clock',
-      };
+    // if () {
+    //   const action = {
+    //     errorType: 'Duplicated Clock',
+    //   };
 
-      dispatch(handleError(action));
+    //   dispatch(handleError(action));
+    //   return;
+    // }
+
+    if (city.length >= 1) {
+      const action = {
+        region: regionSelect.current.value,
+        city,
+      };
+      dispatch(addClock(action));
+      setCity('');
       return;
     }
-
     const action = {
-      region: regionSelect.current.value,
-      city,
+      errorType: 'Not city',
     };
-    dispatch(addClock(action));
-    setCity('');
+    dispatch(handleError(action));
   };
 
   return { regionSelect, handleSubmit, city, handleInputChange };
