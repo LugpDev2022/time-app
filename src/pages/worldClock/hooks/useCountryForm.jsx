@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addClock } from '../../../store/slices/worldClock';
+import { addClock, handleError } from '../../../store/slices/worldClock';
 
 export const useCountryForm = () => {
   const [city, setCity] = useState('');
@@ -13,12 +13,21 @@ export const useCountryForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    if (true) {
+      const action = {
+        errorType: 'Duplicated Clock',
+      };
+
+      dispatch(handleError(action));
+      return;
+    }
+
     const action = {
       region: regionSelect.current.value,
       city,
     };
     dispatch(addClock(action));
-
     setCity('');
   };
 

@@ -1,7 +1,12 @@
 import { Container, Row } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { resetError } from '../../store/slices/worldClock';
 import { AddCountryForm, CountryClockList } from './components';
 
 export const WorldClockPage = () => {
+  const dispatch = useDispatch();
+  dispatch(resetError());
+
   return (
     <Container>
       <Row>

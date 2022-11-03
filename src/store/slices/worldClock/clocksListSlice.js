@@ -10,10 +10,14 @@ export const clocksListSlice = createSlice({
         city: 'Quebec',
         date: '00/00/00',
         clock: '00:00',
+        id: '123',
       },
     ],
     chargingData: true,
-    error: false,
+    error: {
+      isError: false,
+      type: '',
+    },
   },
 
   reducers: {
@@ -24,7 +28,17 @@ export const clocksListSlice = createSlice({
         clock: '00:00',
       });
     },
+
+    handleError: (state, action) => {
+      state.error.isError = true;
+      state.error.type = action.payload.errorType;
+    },
+
+    resetError: state => {
+      state.error.isError = false;
+      state.error.type = '';
+    },
   },
 });
 
-export const { addClock } = clocksListSlice.actions;
+export const { addClock, handleError, resetError } = clocksListSlice.actions;
