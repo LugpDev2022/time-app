@@ -7,8 +7,16 @@ export const timerSlice = createSlice({
       minutes: '10',
       seconds: '00',
     },
+    isRunning: false,
   },
-  reducers: {},
+  reducers: {
+    toggleRunnig: state => {
+      state.isRunning = !state.isRunning;
+    },
+    decrementTime: state => {
+      console.log('decrementTime');
+    },
+  },
 });
 
-export const { increment } = timerSlice.actions;
+export const { toggleRunnig, decrementTime } = timerSlice.actions;
