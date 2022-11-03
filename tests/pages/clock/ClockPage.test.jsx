@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import { ClockPage } from '../../src/pages';
-import { useLocalClock } from '../../src/hooks';
+import { ClockPage } from '../../../src/pages';
+import { useLocalClock } from '../../../src/pages/clock/hooks';
 
-jest.mock('../../src/hooks/useLocalClock');
+jest.mock('../../../src/pages/clock/hooks/useLocalClock');
 
 describe('tests on <ClockPage />', () => {
   test('should match snapshot', () => {

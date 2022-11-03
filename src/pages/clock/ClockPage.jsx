@@ -1,6 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap';
-import { Box, BigNumber, Title } from '../components';
-import { useLocalClock } from '../hooks';
+import { Box, BigNumber, Title } from '../../components';
+import { useLocalClock } from './hooks';
 
 export const ClockPage = () => {
   const { hours, minutes } = useLocalClock();
