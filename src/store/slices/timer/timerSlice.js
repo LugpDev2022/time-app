@@ -4,8 +4,8 @@ export const timerSlice = createSlice({
   name: 'timer',
   initialState: {
     counter: {
-      minutes: '1',
-      seconds: '00',
+      minutes: '0',
+      seconds: '15',
     },
     isRunning: false,
     isFinished: false,
@@ -32,7 +32,7 @@ export const timerSlice = createSlice({
         return;
       }
 
-      if (secondsInNumber < 10) {
+      if (secondsInNumber <= 10) {
         state.counter.seconds = '0' + (secondsInNumber - 1).toString();
         return;
       }
