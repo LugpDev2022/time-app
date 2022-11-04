@@ -1,29 +1,10 @@
-import { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { BigNumber, Title } from '../../../components';
-import {
-  decrementTime,
-  toggleRunnig,
-} from '../../../store/slices/timer/timerSlice';
+import { useTimer } from '../hooks';
 
 export const NormalView = () => {
-  const { counter, isRunning } = useSelector(state => state.timer);
-  const [intervalId, setIntervalId] = useState();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (isRunning) {
-      const interval = setInterval(() => {
-        dispatch(decrementTime());
-      }, 1000);
-      setIntervalId(interval);
-      return;
-    }
-
-    clearInterval(intervalId);
-  }, [isRunning]);
+  const { counter, isFinished, isRunning, handlePlay } = useTimer();
 
   return (
     <Container>
@@ -39,7 +20,8 @@ export const NormalView = () => {
         <Col xs={6} sm={4} md={3}>
           <Button
             className='w-100 py-2 mb-4'
-            onClick={() => dispatch(toggleRunnig())}
+            onClick={handlePlay}
+            disabled={isFinished}
           >
             {isRunning ? 'Pause' : 'Play'}
           </Button>
