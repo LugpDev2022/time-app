@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 export const Box = styled.div`
   border-radius: 10px;
-  border: 2px solid #4cb4ee;
+  border: 2px solid
+    ${props => (props.variant === 'danger' ? '#fd1532' : '#4cb4ee')};
   left: 50%;
   min-height: 30vh;
   padding: 0.5em;
