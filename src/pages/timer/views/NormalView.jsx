@@ -5,7 +5,6 @@ import { useTimer } from '../hooks';
 
 export const NormalView = () => {
   //TODO: Stop timer on changing page
-  //TODO: Play a sound on finishing timer
 
   const { counter, isFinished, isRunning, handlePlay } = useTimer();
 
