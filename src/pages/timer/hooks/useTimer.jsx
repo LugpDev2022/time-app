@@ -4,8 +4,6 @@ import {
   decrementTime,
   toggleRunnig,
 } from '../../../store/slices/timer/timerSlice';
-import alarmAudio from '../../../assets/alarm.mp3';
-import clockTickAudio from '../../../assets/clock-tick.mp3';
 
 export const useTimer = () => {
   const [intervalId, setIntervalId] = useState();
@@ -13,11 +11,9 @@ export const useTimer = () => {
   const { counter, isRunning, isFinished } = useSelector(state => state.timer);
 
   useEffect(() => {
-    const clockTick = new Audio(clockTickAudio);
     if (isRunning) {
       const interval = setInterval(() => {
         dispatch(decrementTime());
-        clockTick.play();
       }, 1000);
       setIntervalId(interval);
       return;
@@ -25,11 +21,6 @@ export const useTimer = () => {
 
     clearInterval(intervalId);
   }, [isRunning]);
-
-  if (isFinished) {
-    const alarm = new Audio(alarmAudio);
-    alarm.play();
-  }
 
   const handlePlay = () => dispatch(toggleRunnig());
 
