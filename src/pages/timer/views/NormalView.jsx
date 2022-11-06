@@ -38,7 +38,7 @@ export const NormalView = () => {
               to='/timer/new'
               className={`w-100 py-2 mb-4 btn btn-${
                 isFinished ? 'danger' : 'primary'
-              }`}
+              } ${isRunning ? 'disabled' : ''}`}
             >
               New
             </Link>
