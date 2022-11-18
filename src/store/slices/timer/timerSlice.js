@@ -1,20 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const timerSlice = createSlice({
-  name: 'timer',
+  name: "timer",
   initialState: {
     counter: {
-      minutes: '0',
-      seconds: '15',
+      minutes: "0",
+      seconds: "15",
     },
     isRunning: false,
     isFinished: false,
   },
   reducers: {
-    toggleRunnig: state => {
+    toggleRunnig: (state) => {
       state.isRunning = !state.isRunning;
     },
-    decrementTime: state => {
+    decrementTime: (state) => {
       const secondsInNumber = parseInt(state.counter.seconds);
 
       if (
@@ -28,18 +28,21 @@ export const timerSlice = createSlice({
 
       if (secondsInNumber === 0) {
         state.counter.minutes = parseInt(state.counter.minutes) - 1;
-        state.counter.seconds = '59';
+        state.counter.seconds = "59";
         return;
       }
-
       if (secondsInNumber <= 10) {
-        state.counter.seconds = '0' + (secondsInNumber - 1).toString();
+        state.counter.seconds = "0" + (secondsInNumber - 1).toString();
         return;
       }
 
       state.counter.seconds = (secondsInNumber - 1).toString();
     },
+    setTimer: (state, action) => {
+      state.counter.minutes = action.payload.minutes;
+      state.counter.seconds = action.payload.seconds;
+    },
   },
 });
 
-export const { toggleRunnig, decrementTime } = timerSlice.actions;
+export const { toggleRunnig, decrementTime, setTimer } = timerSlice.actions;
