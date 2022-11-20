@@ -1,16 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setTimer } from "../../../store/slices/timer/timerSlice";
 
 export const useNewTimer = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [newTimer, setNewTimer] = useState({
     minutes: "0",
     seconds: "00",
   });
 
-  const navigate = useNavigate();
+  const [isTimerValid, setIsTimerValid] = useState(false);
+
+  useEffect(() => {
+    if (parseInt(newTimer.minutes) === 0 && parseInt(newTimer.seconds) === 0) {
+      setIsTimerValid(false);
+      return;
+    }
+    setIsTimerValid(true);
+  }, [newTimer.seconds]);
 
   const handleAccept = () => {
     const action = {
@@ -22,8 +31,6 @@ export const useNewTimer = () => {
   };
 
   const handleIncrementTimer = () => {
-    //TODO: Disable accept button when timer is 0:00
-
     const seconds = parseInt(newTimer.seconds);
     const minutes = parseInt(newTimer.minutes);
 
@@ -92,6 +99,7 @@ export const useNewTimer = () => {
   };
 
   return {
+    isTimerValid,
     newTimer,
     handleAccept,
     handleIncrementTimer,

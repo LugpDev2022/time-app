@@ -5,8 +5,13 @@ import { ExitButton } from "../components";
 import { useNewTimer } from "../hooks";
 
 export const NewTimerView = () => {
-  const { newTimer, handleAccept, handleIncrementTimer, handleDecrementTimer } =
-    useNewTimer();
+  const {
+    newTimer,
+    handleAccept,
+    handleIncrementTimer,
+    handleDecrementTimer,
+    isTimerValid,
+  } = useNewTimer();
 
   return (
     <Box>
@@ -27,7 +32,11 @@ export const NewTimerView = () => {
               <Button className="p-2" onClick={handleIncrementTimer}>
                 +
               </Button>
-              <Button className="p-2" onClick={handleAccept}>
+              <Button
+                className="p-2"
+                disabled={isTimerValid ? false : true}
+                onClick={handleAccept}
+              >
                 Accept
               </Button>
               <Button className="p-2" onClick={handleDecrementTimer}>
