@@ -4,8 +4,8 @@ export const timerSlice = createSlice({
   name: "timer",
   initialState: {
     counter: {
-      minutes: "0",
-      seconds: "15",
+      minutes: "25",
+      seconds: "00",
     },
     isRunning: false,
     isFinished: false,
@@ -41,6 +41,7 @@ export const timerSlice = createSlice({
     setTimer: (state, action) => {
       state.counter.minutes = action.payload.minutes;
       state.counter.seconds = action.payload.seconds;
+      state.isFinished = false;
     },
   },
 });
