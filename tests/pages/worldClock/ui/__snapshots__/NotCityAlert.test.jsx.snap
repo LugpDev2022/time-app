@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test on <NotCityAlert /> should match snapshot 1`] = `
+<div>
+  <div
+    class="fade mt-3 bg-info text-dark border-dark border fw-bold alert alert-primary show"
+    role="alert"
+  >
+    Don't leave the city input empty
+  </div>
+</div>
+`;
