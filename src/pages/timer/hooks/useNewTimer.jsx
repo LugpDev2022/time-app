@@ -31,13 +31,16 @@ export const useNewTimer = () => {
   };
 
   const handleIncrementTimer = () => {
-    if (newTimer.minutes <= 59 && newTimer.seconds <= 55) {
+    if (parseInt(newTimer.minutes) <= 59 && parseInt(newTimer.seconds) <= 55) {
       const timer = handleTimer(newTimer, "increment", 5);
       setNewTimer(timer);
     }
   };
 
   const handleDecrementTimer = () => {
+    if (parseInt(newTimer.minutes) === 0 && parseInt(newTimer.seconds) === 0) {
+      return;
+    }
     const timer = handleTimer(newTimer, "decrement", 5);
     setNewTimer(timer);
   };
