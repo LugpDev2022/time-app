@@ -1,3 +1,3 @@
-export * from "./secondsToMinutes";
+export * from "./handleTimer";
 export * from "./minutesToSeconds";
-export * from "./incrementTimer";
+export * from "./secondsToMinutes";

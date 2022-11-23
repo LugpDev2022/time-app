@@ -1,12 +1,18 @@
-import { minutesToSeconds, secondsToMinutes } from "./";
+import { secondsToMinutes, minutesToSeconds } from "./";
 
-export const incrementTimer = (timer, increment = 1) => {
+export const handleTimer = (timer, operation = "increment", quantity = 1) => {
   const timerMinutes = parseInt(timer.minutes);
   const timerSeconds = parseInt(timer.seconds);
 
   const timerInSeconds = minutesToSeconds(timerMinutes) + timerSeconds;
 
-  const newTimerInSeconds = timerInSeconds + increment;
+  let newTimerInSeconds = 1;
+
+  if (operation === "increment") {
+    newTimerInSeconds = timerInSeconds + quantity;
+  } else if (operation === "decrement") {
+    newTimerInSeconds = timerInSeconds - quantity;
+  }
 
   const { minutes, seconds } = secondsToMinutes(newTimerInSeconds);
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setTimer } from "../../../store/slices/timer/timerSlice";
-import { incrementTimer } from "../helpers";
+import { handleTimer } from "../helpers";
 
 export const useNewTimer = () => {
   const navigate = useNavigate();
@@ -32,39 +32,14 @@ export const useNewTimer = () => {
 
   const handleIncrementTimer = () => {
     if (newTimer.minutes <= 59 && newTimer.seconds <= 55) {
-      const timer = incrementTimer(newTimer, 5);
+      const timer = handleTimer(newTimer, "increment", 5);
       setNewTimer(timer);
     }
   };
 
   const handleDecrementTimer = () => {
-    const seconds = parseInt(newTimer.seconds);
-    const minutes = parseInt(newTimer.minutes);
-
-    if (seconds === 0 && minutes >= 1) {
-      setNewTimer({
-        minutes: (minutes - 1).toString(),
-        seconds: "55",
-      });
-      return;
-    }
-
-    if (seconds === 10 || seconds === 5) {
-      setNewTimer({
-        minutes,
-        seconds: "0" + (seconds - 5).toString(),
-      });
-      return;
-    }
-
-    if (seconds === 0 && minutes === 0) {
-      return;
-    }
-
-    setNewTimer({
-      minutes,
-      seconds: (seconds - 5).toString(),
-    });
+    const timer = handleTimer(newTimer, "decrement", 5);
+    setNewTimer(timer);
   };
 
   return {
