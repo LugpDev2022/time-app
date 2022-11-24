@@ -1,14 +1,18 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   decrementTime,
   toggleRunnig,
-} from '../../../store/slices/timer/timerSlice';
+} from "../../../store/slices/timer/timerSlice";
 
 export const useTimer = () => {
+  //TODO: refactor using handleTimer helper
+
   const [intervalId, setIntervalId] = useState();
   const dispatch = useDispatch();
-  const { counter, isRunning, isFinished } = useSelector(state => state.timer);
+  const { counter, isRunning, isFinished } = useSelector(
+    (state) => state.timer
+  );
 
   useEffect(() => {
     if (isRunning) {
