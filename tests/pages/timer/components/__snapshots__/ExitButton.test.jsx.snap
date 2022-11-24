@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests on <ExitButton /> should match snapshot 1`] = `
+<div>
+  <a
+    href="/timer"
+  >
+    <svg
+      class="text-danger fs-4 position-absolute top-0 left-0 mt-4 ms-1 translate-middle cursor-pointer hover"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="0"
+      version="1.1"
+      viewBox="0 0 16 16"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 10v-2h-5v-2h5v-2l3 3zM11 9v4h-5v3l-6-3v-13h11v5h-1v-4h-8l4 2v9h4v-3z"
+      />
+    </svg>
+  </a>
+</div>
+`;
